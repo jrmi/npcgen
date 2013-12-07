@@ -1,4 +1,4 @@
 npcgen
 ======
 
-Non player character creation for role playing games
+Non player character generation for role playing games
