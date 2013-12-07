@@ -1,0 +1,24 @@
+{
+  "version": "0.1",
+  "name": "NPC generator",
+  "description": "Non player character creation for role palying games",
+  "launch_path": "/www/index.html",
+  "icons": {
+    "16": "/www/app-icons/icon-16.png",
+    "48": "/www/app-icons/icon-48.png",
+    "128": "/www/app-icons/icon-128.png"
+  },
+  "developer": {
+    "name": "Jrmi",
+    "url": "https://github.com/jrmi/npcgen"
+  },
+  "locales": {
+    "fr": {
+      "description": "Générateur de PNJ pour jeux de rôles.",
+      "developer": {
+        "url": "https://github.com/jrmi/npcgen"
+      }
+    }
+  },
+  "default_locale": "fr"
+}

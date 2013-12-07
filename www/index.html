@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="utf-8">
+		
+		<title>NPC generator</title>
+		<meta name="description" content="">
+		
+	    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	    
+		<link rel="stylesheet" href="styles/normalize.css">
+		<link rel="stylesheet" href="styles/brick-0.9.1.css">
+		<link rel="stylesheet" href="styles/main.css">
+
+	</head>
+	<body>
+		<div id='content'>
+			<x-deck id="main-deck" selected-index="1">
+			    <x-card>
+			    	<x-layout>
+			    		<x-appbar>
+						    <header>Menu</header>
+						    <div class="next">></div>
+						</x-appbar>
+						<section>Aucune entrée de menu pour le moment.
+				        </section>
+				    </x-layout>
+			    </x-card>
+			    <x-card>
+			    	<x-layout>
+			    		<x-appbar>
+						    <div  class="prev">=</div>
+						    <header>PNJs</header>
+						    <div class="next">?</div>
+						</x-appbar>
+						<section>
+							<ul id="npclist">
+							</ul>
+				        </section>
+				        <footer>
+				        	<button id="generate">Générer</button>
+				        </footer>
+				    </x-layout>
+			    </x-card>
+			    <x-card>
+			    	<x-layout>
+			    		<x-appbar>
+						    <div  class="prev">&lt;</div>
+						    <header>Aide</header>
+						</x-appbar>
+						<section>
+					        <p>Texte de l'aide</p>
+				        </section>
+				    </x-layout>
+			    </x-card>
+			</x-deck>
+		</div>
+		<script src="scripts/brick-0.9.1.js"></script>
+		<script src="scripts/zepto.min.js"></script>
+		<script src="scripts/data.fr.js"></script>
+		<script src="scripts/main.js"></script>
+	</body>
+</html>
