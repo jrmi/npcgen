@@ -110,9 +110,21 @@
 
   domains.sex = new Domain;
 
-  domains.sex.add('une femme {age} qui {physical_detail} et qui parle {oral_detail}', null, null, ['woman']);
+  domains.sex.add('une {type}femme {age} qui {physical_detail} et qui parle {oral_detail}', null, null, ['woman']);
 
-  domains.sex.add('un homme {age} qui {physical_detail} et qui parle {oral_detail}', null, null, ['man']);
+  domains.sex.add('un {type}homme {age} qui {physical_detail} et qui parle {oral_detail}', null, null, ['man']);
+
+  domains.type = new Domain;
+
+  domains.type.add("");
+
+  domains.type.add("nain ", null, ['fantasy']);
+
+  domains.type.add("elfe ", null, ['fantasy']);
+
+  domains.type.add("orc ", null, ['fantasy']);
+
+  domains.type.add("troll ", null, ['fantasy']);
 
   domains.age = new Domain;
 
@@ -204,7 +216,7 @@
       list = $('#npclist');
       $('#generate').on('click', function(e) {
         var new_elt, text;
-        text = domains.start.resolve();
+        text = domains.start.resolve(['fantasy']);
         new_elt = $("<li class='hidden'><p>" + text + "</p></li>");
         list.prepend(new_elt);
         return new_elt.show(500);
