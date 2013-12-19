@@ -1,59 +1,57 @@
 # Coffee version
 
-rand = (min, max) ->
-    Math.random() * (max - min) + min
-
-pickRandomWeighted = (list, weight) ->
-    total_weight = weight.reduce (prev, cur, i, arr) -> 
-        prev + cur
-     
-    random_num = rand(0, total_weight)
-    weight_sum = 0
-     
-    for elt in list
-        weight_sum += elt;
-        weight_sum = +weight_sum.toFixed(2);
-         
-        if random_num <= weight_sum
-            return elt
-        
-
-pickRandom = (list) ->
-  list[list.length * Math.random() << 0]
-
 domains = {}
 
+# Domain
 class Domain
-    
     constructor: -> 
         @content = []
         
     add: (label, weight=1, conditions=[], contextAddition=[]) ->
-        @content.push( label:label, weight:weight )
+        @content.push( label:label, weight:weight, conditions:conditions, additions:contextAddition )
         
     total_weight: (context=[]) ->
-        @content.reduce (prev, cur, i, arr) -> 
-            prev + cur.weight
+        @content.reduce (prev, cur, i, arr) ->
+            if cur.conditions.length > 0
+                for cond in cur.conditions
+                    if cond in context
+                        return prev + cur.weight
+                        
+                return prev
+                
+            else
+                return prev + cur.weight
         , 0
         
     pick: (context=[]) ->
+        rand = (min, max) ->
+            Math.random() * (max - min) + min
+            
         random_num = rand(0, @total_weight(context))
         weight_sum = 0
         
         for elt in @content
-            console.log "#{random_num}, #{weight_sum}"
-            weight_sum += elt.weight;
-            weight_sum = +weight_sum.toFixed(2);
+            compute = true
+            if elt.conditions.length > 0
+                compute = false
+                for cond in elt.conditions
+                    if cond in context
+                        compute = true
+            
+            if compute
+                weight_sum += elt.weight
+                weight_sum = +weight_sum.toFixed(2)
              
-            if random_num <= weight_sum
-                return elt.label
+                if random_num <= weight_sum
+                    return elt
                 
     resolve: (context=[]) ->
-        label = @pick(context)
-        
-        label = label.replace  /\{([^\}]*)\}/g , (match, name) ->
+        console.log(context)
+        elt = @pick(context)
+            
+        label = elt.label.replace  /\{([^\}]*)\}/g , (match, name) ->
             if domains[name]?
-                domains[name].resolve(context)
+                domains[name].resolve(context.concat(elt.additions))
             else
                 '...'
             
@@ -63,14 +61,16 @@ domains.start = new Domain
 domains.start.add 'Le personnage est {sex}'
                 
 domains.sex = new Domain
-domains.sex.add 'une femme {age} qui {physical_detail} et qui parle {oral_detail}'
-domains.sex.add 'un homme {age} qui {physical_detail} et qui parle {oral_detail}'
+domains.sex.add 'une femme {age} qui {physical_detail} et qui parle {oral_detail}', null, null, ['woman']
+domains.sex.add 'un homme {age} qui {physical_detail} et qui parle {oral_detail}', null, null, ['man']
 
 domains.age = new Domain
-domains.age.add 'agé(e)' 
+domains.age.add 'agé', null, ['man']
+domains.age.add 'agée', null, ['woman']
 domains.age.add 'jeune' 
 domains.age.add 'adulte', 3
-domains.age.add 'adolescent(e)', 2
+domains.age.add 'adolescent', 2, ['man']
+domains.age.add 'adolescente', 2, ['woman']
 
 physical_details = ['mince', 'rachitique', 'gros bide', 'géant', 'musclé', 
     'tout rond', 'petit', 'obése', 'vouté', 'bossu', 
@@ -96,12 +96,16 @@ domains.physical_detail = new Domain
 domains.physical_detail.add "est mince"
 domains.physical_detail.add "est rachitique"
 domains.physical_detail.add "a un gros bide"
-domains.physical_detail.add "est très grand(e)"
-domains.physical_detail.add "est très musclé(e)"
-domains.physical_detail.add "est tout(e) rond(e)"
+domains.physical_detail.add "est très grand", null, ['man']
+domains.physical_detail.add "est très musclé", null, ['man']
+domains.physical_detail.add "est tout rond", null, ['man']
+domains.physical_detail.add "est très grande", null, ['woman']
+domains.physical_detail.add "est très musclée", null, ['woman']
+domains.physical_detail.add "est toute ronde", null, ['woman']
 domains.physical_detail.add "a de gros lobes d'oreille"
 domains.physical_detail.add "a la peau {skin_color}"
 domains.physical_detail.add "n'a qu'une seule oreille"
+domains.physical_detail.add "a une longue barbe", null, ['man']
 domains.physical_detail.add "a des cheveux très long"
 domains.physical_detail.add "a les cheveux et colorés"
 domains.physical_detail.add "a les cheveux en bataille"
