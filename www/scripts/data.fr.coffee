@@ -246,13 +246,13 @@ domains.interact_with_people.add "torture"
 domains.interact_with_people.add "s'allie avec"
 
 domains.interact_with_place = new Domain
-domains.interact_with_place.add "introduit dans"
+domains.interact_with_place.add "veux s'introduire dans"
 domains.interact_with_place.add "construit"
 domains.interact_with_place.add "découvre"
 domains.interact_with_place.add "détruit"
 domains.interact_with_place.add "se cache dans"
-domains.interact_with_place.add "s'évader d'"
-domains.interact_with_place.add "se débarrasser d'"
+domains.interact_with_place.add "veux s'évader d'"
+domains.interact_with_place.add "veux se débarrasser d'"
 domains.interact_with_place.add "achète"
 
 domains.place = new Domain
