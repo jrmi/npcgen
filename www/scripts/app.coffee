@@ -76,88 +76,195 @@ domains.age.add 'agé', null, ['man']
 domains.age.add 'agée', null, ['woman']
 domains.age.add 'jeune' 
 domains.age.add 'adulte', 3
-domains.age.add 'adolescent', 2, ['man']
-domains.age.add 'adolescente', 2, ['woman']
-
-physical_details = ['mince', 'rachitique', 'gros bide', 'géant', 'musclé', 
-    'tout rond', 'petit', 'obése', 'vouté', 'bossu', 
-    "peau colorée", "gros lobes d'oreille", 'une seule oreille',"pas de lobes d'oreille", 'oreilles décollés',
-    "boucles d'oreilles", "oreilles déformées", 'bouche en cul de poule', 'dents parfaites', 'dents pointues',
-    'dents gatées', 'lèvres très fines', "dents en métal", "dents de lapin", "dent de la chance", 
-    "dent(s) manquante(s)", "pas de dent", "piercing", "a de grosses lèvres","a un bec de lièvre",
-    'un bras manquant', 'les mains dans la poche', 'des mains énorme', 'tatouage sur les mains', 'une main manquante',
-    "un avant-bras manquant", "des mains disproportionnées", 'nez en trompette', 'nez cassé', 'nez pointu', 
-    'nez coupé', 'nez de cochon', "piercing sur le nez", "nez tordu", 'yeux verrons', 
-    "porte des lunettes", "oeuil manquant", "yeux injectés de sang", "oeuil sans pupilles", "yeux maquillés", 
-    "un strabisme", "yeux profonds", "yeux globuleux", "yeux fermés", "yeux à la picasso", 
-    "n'a pas de sourcil", "a un seul sourcil", 'a des favoris', "a de la barbe", "a un collier", 
-    "a de la moustache", "est imberbe", "est mal rasé", "a une longue barbe", "a un bouc", 
-    "a des rubans dans la barbe", "a des élastique dans la barbe", 'cicatrices sur le visage', "des piercings sur le visage", "visage trop maquillé", 
-    "visage allongé", "visage pâle", "a des tatouagessur le visage", "a les joues rose", "peintures tribales sur le visage", 
-    "visage rougeaud", "visage buriné", "visage acnéique", "trait fin", 'cheveux rasés', 
-    "cheveux blancs", "cheveux trés long", "cheveux gras", "cheveux courts", "cheveux poivre et sel", 
-    "cheveux en pointes", "cheveux colorés", "dessin rasé sur le crane", "a des couettes", "cheveux de couleur étrange",
-    "cheveux crépus", "cheveux en bataille", "a des dreadlocks" ]
     
 domains.physical_detail = new Domain
+# body
 domains.physical_detail.add "est mince"
 domains.physical_detail.add "est rachitique"
 domains.physical_detail.add "a un gros bide"
 domains.physical_detail.add "est très grand", null, ['man']
 domains.physical_detail.add "est très musclé", null, ['man']
 domains.physical_detail.add "est tout rond", null, ['man']
+domains.physical_detail.add "est tout petit", null, ['man']
 domains.physical_detail.add "est très grande", null, ['woman']
 domains.physical_detail.add "est très musclée", null, ['woman']
 domains.physical_detail.add "est toute ronde", null, ['woman']
-domains.physical_detail.add "a de gros lobes d'oreille"
+domains.physical_detail.add "est toute petite", null, ['woman']
+domains.physical_detail.add "est obèse"
+domains.physical_detail.add "est vouté"
+domains.physical_detail.add "est bossu"
 domains.physical_detail.add "a la peau {skin_color}"
-domains.physical_detail.add "n'a qu'une seule oreille"
-domains.physical_detail.add "a une longue barbe", null, ['man']
-domains.physical_detail.add "a des cheveux très long"
-domains.physical_detail.add "a les cheveux et colorés"
-domains.physical_detail.add "a les cheveux en bataille"
 
-oral_details = [ 'répète « Ok ! »', 'dit « Euhhhhh » souvent', "répète « tu vois c'que je veux dire »", 
-    "répète « putain »", "répète « lol »", "répète « délire »", "Répète « j'ai toujours révé de faire ça »", 
-    "répète « comment on dit déjà ? »", "utilise un langage ordurier", 'a un cheveu sur la langue','zozote', 
-    'est bègue', 'postillionne', 'a un accent', 'shuinte', "marmonne", "parle en étant essouflé", 'voix monotone', 
-    'voix faible', 'voix nasillarde', 'voix guturale', 'voix débile','voix suraigue', "voix forte", 
-    "articule très bien", "voix chantante", 'tapote les doigts', "s'amuse avec un objet", 'gesticule en parlant',
-    "joint ses doigts", "se caresse la barbe", "fait craquer ses doigts", "l'histoire change souvent", 
-    "recherche l'approbation de l'auditoire", "joue la comédie", "se parle à lui même", "est fataliste", 
-    "est optimiste", "est pessimiste", "parle par questions", "parle rapidement", "parle lentement", 
-    "manque de vocabulaire", "disgresse sans cesse", 'renifle souvent', 'parle les yeux fermés', 
-    'parle de lui par son nom', "ne s'arrête jamais de parler", "mâche quelque chose", "se racle la gorge",
-    "ne regarde pas dans les yeux", 'parle très près des gens', 'a une mauvaise haleine', 'prend le temps de répondre',
-    'est distrait', 'veut être pote', "ne termine pas ses phrases", "parle à des gens absent", "rôte régulierement", 
-    "soupir régulièrement", "cligne d'un/des yeux", 'tord la bouche', 'a un faux sourire permanent', 
-    'est partiellement paralysé', "a les yeux écquarquillés", "se lêche les lévres", "évite les yeux"]
+# Ears
+domains.physical_detail.add "a de gros lobes d'oreille"
+domains.physical_detail.add "n'a qu'une seule oreille"
+domains.physical_detail.add "n'a pas de lobe d'oreille"
+domains.physical_detail.add "a les oreilles décolées"
+domains.physical_detail.add "a des boucles d'oreille"
+domains.physical_detail.add "a les oreilles déformées"
+
+# mouth
+domains.physical_detail.add "a la bouche en cul de poule"
+domains.physical_detail.add "a un bec de lièvre"
+domains.physical_detail.add "a des dents parfaites"
+domains.physical_detail.add "a des dents pointues"
+domains.physical_detail.add "a des dents gatées"
+domains.physical_detail.add "a des lèvres très fines"
+domains.physical_detail.add "a de grosses lèvres"
+domains.physical_detail.add "a des dents en métal"
+domains.physical_detail.add "a des dents de lapin"
+domains.physical_detail.add "a des dents de la chance"
+domains.physical_detail.add "a des dents manquantes"
+domains.physical_detail.add "n'a pas de dent"
+
+# Arms
+domains.physical_detail.add "a un bras manquant"
+domains.physical_detail.add "a des mains énormes"
+domains.physical_detail.add "a des tatouages sur les bras"
+domains.physical_detail.add "a des tatouages sur les mains"
+domains.physical_detail.add "a une main manquante"
+domains.physical_detail.add "a des mains disproportionnées"
+
+# Noze
+domains.physical_detail.add "a le nez en trompette"
+domains.physical_detail.add "a le nez cassé"
+domains.physical_detail.add "a le nez pointu"
+domains.physical_detail.add "a un nez de cochon"
+domains.physical_detail.add "n'a pas de nez"
+domains.physical_detail.add "a un piercing sur le nez"
+
+# Eyes
+domains.physical_detail.add "a les yeux verrons"
+domains.physical_detail.add "porte des lunettes"
+domains.physical_detail.add "a un oeuil en moins"
+domains.physical_detail.add "a les yeux injectés de sang"
+domains.physical_detail.add "a un oeuil sans pupille"
+domains.physical_detail.add "a les yeux très maquillés", null, ['woman']
+domains.physical_detail.add "a un strabisme"
+domains.physical_detail.add "a les yeux globuleux"
+domains.physical_detail.add "n'a pas de sourcils"
+
+
+# Face
+domains.physical_detail.add "a une longue barbe", null, ['man']
+domains.physical_detail.add "a un percing au visage"
+domains.physical_detail.add "a des favoris", null, ['man']
+domains.physical_detail.add "a une moustache", null, ['man']
+domains.physical_detail.add "est imberbe", null, ['man']
+domains.physical_detail.add "est mal rasé", null, ['man']
+domains.physical_detail.add "a un bouc", null, ['man']
+domains.physical_detail.add "a des rubans dans sa barbe", null, ['man']
+domains.physical_detail.add "a des élastiques dans sa barbe", null, ['man']
+domains.physical_detail.add "a des cicatrices sur le visage"
+domains.physical_detail.add "a des piercings sur le visage"
+domains.physical_detail.add "a le visage trop maquillé", null, ['woman']
+domains.physical_detail.add "a le visage pâle"
+domains.physical_detail.add "a des tatouages sur le visage"
+domains.physical_detail.add "a les joues roses"
+domains.physical_detail.add "a des peintures tribales sur le visage"
+domains.physical_detail.add "a le visage buriné"
+domains.physical_detail.add "a de l'acnée"
+domains.physical_detail.add "a les cheveux rasés"
+
+# Hairs
+domains.physical_detail.add "a les cheveux rasés"
+domains.physical_detail.add "a des cheveux très long"
+domains.physical_detail.add "a les cheveux {hair_color}"
+domains.physical_detail.add "a les cheveux en bataille"
+domains.physical_detail.add "a les cheveux gras"
+domains.physical_detail.add "a les cheveux très long"
+domains.physical_detail.add "a des dessins rasé sur le crane"
+domains.physical_detail.add "a des couettes"
+domains.physical_detail.add "a des dreadlocks"
+
+domains.skin_color = new Domain
+domains.skin_color.add "très blanche"
+domains.skin_color.add "noire"
+domains.skin_color.add "grise"
+domains.skin_color.add "jaune"
+domains.skin_color.add "rouge", null, ['fantasy']
+
+domains.hair_color = new Domain
+domains.hair_color.add "blanc", 5
+domains.hair_color.add "rose"
+domains.hair_color.add "poivre et sel"
+domains.hair_color.add "rouge"
     
 domains.oral_detail = new Domain
-domains.oral_detail.add "en répetant « {word_repeat} »"
-domains.oral_detail.add "d'une voie guturale"
-domains.oral_detail.add "en beguayant"
-domains.oral_detail.add "en disgressant sans cesse"
+domains.oral_detail.add "en répetant « {word_repeat} »", 3
 domains.oral_detail.add "souvent à des gens absents"
+domains.oral_detail.add "avec un langage ordurier"
+domains.oral_detail.add "avec un cheveux sur la langue"
+domains.oral_detail.add "avec une petite voix"
+domains.oral_detail.add "avec une voix débile"
+domains.oral_detail.add "avec une voix suraigue"
+domains.oral_detail.add "avec une voix chantante"
+domains.oral_detail.add "avec de l'accent"
+
+domains.oral_detail.add "en beguayant"
+domains.oral_detail.add "en zozotant"
+domains.oral_detail.add "en postillionnant"
+domains.oral_detail.add "en shuintant"
+domains.oral_detail.add "en marmonant"
+domains.oral_detail.add "d'une voix monotone"
+domains.oral_detail.add "d'une voix faible"
+domains.oral_detail.add "d'une voix nasillarde"
+domains.oral_detail.add "d'une voix guturale"
+domains.oral_detail.add "en étant essouflé"
+domains.oral_detail.add "en articulant excessivement"
+
+domains.oral_detail.add "en tapotant des doigts"
+domains.oral_detail.add "en s'amusant avec un objet"
+domains.oral_detail.add "en gesticulant"
+domains.oral_detail.add "en se carressant la barbe", null, ['man']
+domains.oral_detail.add "en changeant d'histoire souvent"
+domains.oral_detail.add "en recherchant l'approbation de son auditoire"
+domains.oral_detail.add "en jouant la comédie"
+domains.oral_detail.add "en s'adressant à lui même"
+
+domains.oral_detail.add "avec fatalisme"
+domains.oral_detail.add "avec optimisme"
+domains.oral_detail.add "par questions"
+domains.oral_detail.add "très vite"
+domains.oral_detail.add "très lentement"
+domains.oral_detail.add "avec un vocabulaire réduit"
+domains.oral_detail.add "en disgressant sans cesse"
+domains.oral_detail.add "en reniflant"
+domains.oral_detail.add "de lui par son nom"
+domains.oral_detail.add "sans s'arrêter"
+domains.oral_detail.add "en mâchant quelque chose"
+domains.oral_detail.add "après s'être racler la gorge"
+domains.oral_detail.add "en évitant les contacts occulaires"
+domains.oral_detail.add "en étant très près des gens"
+domains.oral_detail.add "avec une mauvaise haleine"
+domains.oral_detail.add "en prenant le temps de répondre"
+domains.oral_detail.add "en ayant l'air distrait"
+domains.oral_detail.add "en voulant être pote"
+domains.oral_detail.add "sans terminer ses phrases"
+domains.oral_detail.add "souvent à des gens absents"
+domains.oral_detail.add "en rôtant régulierement"
+domains.oral_detail.add "en soupirant régulièrement"
+domains.oral_detail.add "en tordant la bouche"
+domains.oral_detail.add "avec un faux sourire permanent"
+domains.oral_detail.add "en se léchant les lêvres"
 
 domains.word_repeat = new Domain
 domains.word_repeat.add "Ok !!!"
 domains.word_repeat.add "Euhhhhh...."
 domains.word_repeat.add "Tu vois c'que j'veux dire ?"
-domains.word_repeat.add "lol"
-
-domains.skin_color = new Domain
-domains.skin_color.add "blanche"
-domains.skin_color.add "noire"
-domains.skin_color.add "grise"
-domains.skin_color.add "rouge"
+domains.word_repeat.add "Lol"
+domains.word_repeat.add "Putain"
+domains.word_repeat.add "Délire"
+domains.word_repeat.add "Comment on dit déjà ?"
+domains.word_repeat.add "Délire"
+domains.word_repeat.add "j'ai toujours révé de dire ça"
 
 document.addEventListener 'DOMComponentsLoaded', ->
     $().ready ()->
         list = $('#npclist')
         
         $('#generate').on 'click', (e) ->
-            text = domains.start.resolve(['fantasy'])
+            text = domains.start.resolve()
             new_elt = $("<li class='hidden'><p>#{text}</p></li>")
             list.prepend(new_elt)
             new_elt.show(500)
