@@ -280,4 +280,92 @@ domains.place_adj.add "désert(e)"
 domains.place_adj.add "abandoné(e)"
 domains.place_adj.add "", 2
 
+domains.impro_muse = new Domain
+domains.impro_muse.add "{when}"
+
+domains.when = new Domain
+domains.when.add "à la préhistoire {where}, {who} {what}", null, null, ['prehistory']
+domains.when.add "de nos jours {where}, {who} {what}"
+domains.when.add "au moyen age {where}, {who} {what}", null, null, ['middle_age']
+domains.when.add "pendant la guerre {where}, {who} {what}"
+domains.when.add "dans le futur {where}, {who} {what}"
+domains.when.add "après une apocalypse {where}, {who} {what}"
+domains.when.add "pendant la nuit {where}, {who} {what}"
+
+domains.where = new Domain
+domains.where.add "dans la forêt"
+domains.where.add "dans un supermarché", null, ['!prehistory']
+domains.where.add "dans un château"
+domains.where.add "à la plage"
+domains.where.add "dans un laboratoire", null, ['!prehistory']
+domains.where.add "sur un bateau", null, ['!prehistory']
+domains.where.add "sur une île"
+domains.where.add "chez le dentiste"
+domains.where.add "chez le coiffeur"
+domains.where.add "dans un cimetière", null, ['!prehistory']
+domains.where.add "dans une usine", null, ['!prehistory']
+domains.where.add "dans une morgue", null, ['!prehistory']
+domains.where.add "en chine {where}"
+domains.where.add "en amérique {where}"
+domains.where.add "en angleterre {where}"
+domains.where.add "en espagne {where}"
+domains.where.add "au groenland {where}"
+domains.where.add "en égypte {where}"
+domains.where.add "en afrique {where}"
+domains.where.add "en inde {where}"
+domains.where.add "dans un labyrinthe"
+domains.where.add "dans le ciel"
+domains.where.add "dans un tapis", null, ['!prehistory']
+domains.where.add "dans l'herbe", null, ['!prehistory']
+domains.where.add "sous l'eau"
+domains.where.add "dans un corps vivant"
+#domains.where.add ""
+
+domains.who = new Domain
+domains.who.add "un homme {who_details}"
+domains.who.add "une femme {who_details}"
+domains.who.add "une fillette {who_details}"
+domains.who.add "un petit garçon {who_details}"
+domains.who.add "une femme agée {who_details}"
+domains.who.add "un homme agé {who_details}"
+domains.who.add "un couple"
+
+
+domains.who_details = new Domain
+domains.who_details.add "qui porte un sac à dos"
+domains.who_details.add "complètement dépressif"
+domains.who_details.add "complètement lunatique"
+domains.who_details.add "avec une voix suraigue"
+domains.who_details.add "avec la bouche en cul de poule"
+domains.who_details.add "avec un vélo", null, ['!middle_age', '!prehistory']
+domains.who_details.add "vouté"
+domains.who_details.add "wesh wesh", null, ['!middle_age', '!prehistory']
+domains.who_details.add "très distingué"
+domains.who_details.add "complètement fou"
+domains.who_details.add "en colère"
+domains.who_details.add "qui n'a pas le sens de l'orientation"
+domains.who_details.add "avec un animal de compagnie"
+domains.who_details.add "qui a les pieds collés au sol"
+domains.who_details.add "malhonnnète"
+
+#domains.who_details.add ""
+
+domains.what = new Domain
+domains.what.add "coupe du bois"
+domains.what.add "joue au tennis", null, ['!middle_age', '!prehistory']
+domains.what.add "fait des tags", null, ['!middle_age', '!prehistory']
+domains.what.add "travaille le jardin"
+domains.what.add "démine une bombe", null, ['!middle_age', '!prehistory']
+domains.what.add "passe le permis", null, ['!middle_age', '!prehistory']
+domains.what.add "dispense un cours"
+domains.what.add "écrit un poème"
+domains.what.add "fait des ricochets"
+domains.what.add "fabrique une potion"
+domains.what.add "réalise une expérience scientifique"
+domains.what.add "pêche des poissons"
+domains.what.add "fait du ski", null, ['!middle_age', '!prehistory']
+domains.what.add "vole un objet précieux"
+#domains.what.add ""
+#domains.what.add ""
+
 this.domains = domains

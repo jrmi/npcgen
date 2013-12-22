@@ -27,15 +27,22 @@
     };
 
     Domain.prototype._valid_in_context = function(conditions, context) {
-      var cond, _i, _len;
+      var cond, res, _i, _len, _ref, _ref1;
       if (conditions.length > 0 && context.length > 0) {
+        res = true;
         for (_i = 0, _len = conditions.length; _i < _len; _i++) {
           cond = conditions[_i];
-          if (__indexOf.call(context, cond) >= 0) {
-            return true;
+          if (cond[0] === '!') {
+            if (_ref = cond.slice(1), __indexOf.call(context, _ref) >= 0) {
+              res = res && false;
+            }
+          } else {
+            if (_ref1 = !cond, __indexOf.call(context, _ref1) >= 0) {
+              res = res && false;
+            }
           }
         }
-        return false;
+        return res;
       }
       return true;
     };
@@ -97,6 +104,9 @@
       list = $('#npclist');
       $('#generate').on('click', function(e) {
         var new_elt, text;
+        text = window.domains.impro_muse.resolve();
+        new_elt = $("<li class><p>" + text + "</p></li>");
+        list.prepend(new_elt);
         text = window.domains.start_idea.resolve();
         new_elt = $("<li class><p>" + text + "</p></li>");
         list.prepend(new_elt);

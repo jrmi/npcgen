@@ -10,10 +10,15 @@ this.Domain = class Domain
     
     _valid_in_context: (conditions, context) ->
         if conditions.length > 0 and context.length > 0 
+            res = true
             for cond in conditions
-                if cond in context
-                  return true
-            return false
+                if cond[0] == '!'
+                    if cond[1..] in context
+                        res = res and false
+                else 
+                    if not cond in context
+                        res = res and false
+            return res
             
         return true
     
@@ -58,6 +63,9 @@ document.addEventListener 'DOMComponentsLoaded', ->
         list = $('#npclist')
         
         $('#generate').on 'click', (e) ->
+            text = window.domains.impro_muse.resolve()
+            new_elt = $("<li class><p>#{text}</p></li>")
+            list.prepend(new_elt)
             text = window.domains.start_idea.resolve()
             new_elt = $("<li class><p>#{text}</p></li>")
             list.prepend(new_elt)
