@@ -205,4 +205,79 @@ domains.word_repeat.add "Comment on dit déjà ?"
 domains.word_repeat.add "Délire"
 domains.word_repeat.add "j'ai toujours révé de dire ça"
 
+
+domains.start_idea = new Domain
+domains.start_idea.add "C'est {people} {people_adj} qui {interact_with_people} {people} {people_adj}"
+domains.start_idea.add "C'est {people} {people_adj} qui {interact_with_people} {people} {people_adj} dans {place}"
+domains.start_idea.add "C'est {people} {people_adj} qui {interact_with_place} {place} {place_adj}"
+domains.start_idea.add "C'est {people} {people_adj} qui {interact_with_place} {place} {place_adj} avec {people}"
+
+domains.people = new Domain
+domains.people.add "un scientifique"
+domains.people.add "un gourou"
+domains.people.add "un chef d'état"
+domains.people.add "un top model"
+domains.people.add "un dealer"
+domains.people.add "un flic"
+domains.people.add "un milliardaire"
+domains.people.add "un acteur"
+domains.people.add "un corporatiste"
+domains.people.add "un médecin"
+domains.people.add "un journaliste"
+
+domains.people_adj = new Domain
+domains.people_adj.add "fou"
+domains.people_adj.add "machiavélique"
+domains.people_adj.add "célèbre"
+domains.people_adj.add "très vieux"
+domains.people_adj.add "démoniaque"
+domains.people_adj.add "généreux"
+domains.people_adj.add ""
+domains.people_adj.add ""
+domains.people_adj.add ""
+
+domains.interact_with_people = new Domain
+domains.interact_with_people.add "demande de l'aide a"
+domains.interact_with_people.add "poursuit"
+domains.interact_with_people.add "recherche"
+domains.interact_with_people.add "veux séduire"
+domains.interact_with_people.add "se fait passer pour"
+domains.interact_with_people.add "torture"
+domains.interact_with_people.add "s'allie avec"
+
+domains.interact_with_place = new Domain
+domains.interact_with_place.add "introduit dans"
+domains.interact_with_place.add "construit"
+domains.interact_with_place.add "découvre"
+domains.interact_with_place.add "détruit"
+domains.interact_with_place.add "se cache dans"
+domains.interact_with_place.add "s'évader d'"
+domains.interact_with_place.add "se débarrasser d'"
+domains.interact_with_place.add "achète"
+
+domains.place = new Domain
+domains.place.add "une prison"
+domains.place.add "un laboratoire"
+domains.place.add "une secte"
+domains.place.add "une morque"
+domains.place.add "des égouts"
+domains.place.add "un supermarché"
+domains.place.add "un club privé"
+domains.place.add "un casino"
+domains.place.add "un cinéma"
+domains.place.add "une centrale nucléaire"
+domains.place.add "une base militaire"
+domains.place.add "un asile psychiatrique"
+domains.place.add "une église"
+domains.place.add "une usine"
+
+domains.place_adj = new Domain
+domains.place_adj.add "illégale"
+domains.place_adj.add "clandestin(e)"
+domains.place_adj.add "hanté(e)"
+domains.place_adj.add "détruit(e)"
+domains.place_adj.add "désert(e)"
+domains.place_adj.add "abandoné(e)"
+domains.place_adj.add "", 2
+
 this.domains = domains

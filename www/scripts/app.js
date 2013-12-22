@@ -28,7 +28,7 @@
 
     Domain.prototype._valid_in_context = function(conditions, context) {
       var cond, _i, _len;
-      if (conditions.length > 0) {
+      if (conditions.length > 0 && context.length > 0) {
         for (_i = 0, _len = conditions.length; _i < _len; _i++) {
           cond = conditions[_i];
           if (__indexOf.call(context, cond) >= 0) {
@@ -97,8 +97,11 @@
       list = $('#npclist');
       $('#generate').on('click', function(e) {
         var new_elt, text;
+        text = window.domains.start_idea.resolve();
+        new_elt = $("<li class><p>" + text + "</p></li>");
+        list.prepend(new_elt);
         text = window.domains.start.resolve();
-        new_elt = $("<li class='hidden'><p>" + text + "</p></li>");
+        new_elt = $("<li class><p>" + text + "</p></li>");
         list.prepend(new_elt);
         return new_elt.show(500);
       });

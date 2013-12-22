@@ -9,7 +9,7 @@ this.Domain = class Domain
         @content.push( label:label, weight:weight, conditions:conditions, additions:contextAddition )
     
     _valid_in_context: (conditions, context) ->
-        if conditions.length > 0 
+        if conditions.length > 0 and context.length > 0 
             for cond in conditions
                 if cond in context
                   return true
@@ -58,8 +58,11 @@ document.addEventListener 'DOMComponentsLoaded', ->
         list = $('#npclist')
         
         $('#generate').on 'click', (e) ->
+            text = window.domains.start_idea.resolve()
+            new_elt = $("<li class><p>#{text}</p></li>")
+            list.prepend(new_elt)
             text = window.domains.start.resolve()
-            new_elt = $("<li class='hidden'><p>#{text}</p></li>")
+            new_elt = $("<li class><p>#{text}</p></li>")
             list.prepend(new_elt)
             new_elt.show(500)
         
